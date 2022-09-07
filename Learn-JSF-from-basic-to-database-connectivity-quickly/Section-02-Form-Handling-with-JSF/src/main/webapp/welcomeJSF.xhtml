@@ -1,0 +1,19 @@
+<!--http://localhost:8080/Section-02-Form-Handling-with-JSF/welcomeJSF.xhtml  -->
+<!--http://localhost:8080/Section-02-Form-Handling-with-JSF/faces/welcomeJSF.xhtml  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Welcome to JSF tutorials</title>
+</h:head>
+<h:form>
+	welcome to JSF tutorials
+	<h:inputText id="name" value="#{name}" />
+	<h:commandButton value="Submit" action="message" />
+</h:form>
+</html>
