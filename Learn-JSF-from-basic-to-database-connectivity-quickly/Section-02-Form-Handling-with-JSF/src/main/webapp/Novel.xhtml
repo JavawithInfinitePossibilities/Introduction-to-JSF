@@ -1,0 +1,46 @@
+<!-- http://localhost:8080/Section-02-Form-Handling-with-JSF/Novel.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Adding Novel Details</title>
+</h:head>
+
+<h:form>
+	<pre>
+		<h1>Add Novel Details</h1>
+		name : <h:inputText id="name" value="#{novel.name}" />
+		author : <h:inputText id="author" value="#{novel.author}" />
+		editor : <h:inputText id="editor" value="#{novel.editor}" />
+		edition : <h:inputText id="edition" value="#{novel.edition}" />
+		price : <h:inputText id="price" value="#{novel.price}" />
+		Genre : <h:selectManyCheckbox id="genre" value="#{novel.genre}">
+			<f:selectItem itemLabel="Comedy" itemValue="Comedy" />
+			<f:selectItem itemLabel="Drama" itemValue="Drama" />
+			<f:selectItem itemLabel="Romance" itemValue="Romance" />
+			<f:selectItem itemLabel="Adventure" itemValue="Adventure" />
+			<f:selectItem itemLabel="Suspense" itemValue="Suspense" />
+			<f:selectItem itemLabel="Thriller" itemValue="Thriller" />
+		</h:selectManyCheckbox>
+		Description : <h:inputTextarea id="description"
+			value="#{novel.description}" />
+		Release Date : <h:inputText id="releaseDate"
+			value="#{novel.releaseDate}" />
+		Origin : <h:selectOneMenu id="origin" value="#{novel.origin}">
+			<f:selectItem itemLabel="india" itemValue="india" />
+			<f:selectItem itemLabel="oversees" itemValue="oversees" />
+		</h:selectOneMenu>	
+		Sale Out Of India : <h:selectOneRadio id="saleOutOfIndia" value="#{novel.saleOutOfIndia}">
+			<f:selectItem itemLabel="yes" itemValue="yes" />
+			<f:selectItem itemLabel="no" itemValue="no" />
+		</h:selectOneRadio>
+		<br />
+		<h:commandButton id="submit" value="Add" action="addNovel" />
+	</pre>
+</h:form>
+</html>
