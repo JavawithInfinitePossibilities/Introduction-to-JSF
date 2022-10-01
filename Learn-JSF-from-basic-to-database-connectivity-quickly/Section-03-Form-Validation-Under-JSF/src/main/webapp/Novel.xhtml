@@ -1,0 +1,84 @@
+<!-- http://localhost:8080/Section-03-Form-Validation-Under-JSF/Novel.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Adding Novel Details</title>
+	<style>
+<!--
+.validationError {
+	color: blue;
+}
+
+.groupValidationError {
+	color: red;
+}
+-->
+</style>
+</h:head>
+
+<h:form>
+	<pre>
+		<h1>Add Novel Details</h1>
+		name : <h:inputText id="name" value="#{novel.name}" required="true"
+			label="Name" validatorMessage="Need minimum 5 char max of 20">
+			<f:validateLength minimum="5" maximum="20" />
+			</h:inputText>
+		<h:message for="name" styleClass="validationError" />
+		author : <h:inputText id="author" value="#{novel.author}"
+			required="true" label="Author" />
+		<h:message for="author" />
+		editor : <h:inputText id="editor" value="#{novel.editor}" />
+		edition : <h:inputText id="edition" value="#{novel.edition}"
+			required="true" label="Edition">
+				  <f:validateLongRange minimum="5" />
+		</h:inputText>
+		<h:message for="edition" styleClass="validationError" />
+		price : <h:inputText id="price" value="#{novel.price}" required="true"
+			label="Price">
+				<f:validateDoubleRange minimum="10.0" />
+		</h:inputText>
+		<h:message for="price" styleClass="validationError" />
+		Genre : <h:selectManyCheckbox id="genre" value="#{novel.genre}"
+			required="true" label="Genre">
+			<f:selectItem itemLabel="Comedy" itemValue="Comedy" />
+			<f:selectItem itemLabel="Drama" itemValue="Drama" />
+			<f:selectItem itemLabel="Romance" itemValue="Romance" />
+			<f:selectItem itemLabel="Adventure" itemValue="Adventure" />
+			<f:selectItem itemLabel="Suspense" itemValue="Suspense" />
+			<f:selectItem itemLabel="Thriller" itemValue="Thriller" />
+		</h:selectManyCheckbox>
+		Description : <h:inputTextarea id="description"
+			value="#{novel.description}" required="true" label="Description" />
+		Release Date : <h:inputText id="releaseDate"
+			value="#{novel.releaseDate}" validator="#{validation.validate}">
+			</h:inputText>
+		Origin : <h:selectOneMenu id="origin" value="#{novel.origin}"
+			required="true" label="Origin">
+			<f:selectItem itemLabel="india" itemValue="india" />
+			<f:selectItem itemLabel="oversees" itemValue="oversees" />
+		</h:selectOneMenu>	
+		Sale Out Of India : <h:selectOneRadio id="saleOutOfIndia"
+			value="#{novel.saleOutOfIndia}" required="true"
+			label="SaleOutOfIndia">
+			<f:selectItem itemLabel="Yes" itemValue="yes" />
+			<f:selectItem itemLabel="No" itemValue="no" />
+		</h:selectOneRadio>
+		<br />
+		Author Email : <h:inputText id="email" value="#{novel.email}"
+			required="true" label="Email">
+			<f:validateRegex pattern="^(.+)@(.+)$">
+			<h:validationMessage></h:validationMessage>
+			</f:validateRegex>
+			</h:inputText>
+		<br />
+		<h:commandButton id="submit" value="Add" action="addNovel" />
+	</pre>
+</h:form>
+<h:messages styleClass="groupValidationError" />
+</html>
