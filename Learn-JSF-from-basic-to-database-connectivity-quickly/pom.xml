@@ -116,5 +116,8 @@
 	<modules>
 		<module>Section-01-Introduction-to-JSF</module>
 		<module>Section-02-Form-Handling-with-JSF</module>
+		<module>Section-03-Form-Validation-Under-JSF</module>
+		<module>Section-04-Managed-Bean-Scopes</module>
+		<module>Section-05-Integrating-web-template</module>
 	</modules>
 </project>
