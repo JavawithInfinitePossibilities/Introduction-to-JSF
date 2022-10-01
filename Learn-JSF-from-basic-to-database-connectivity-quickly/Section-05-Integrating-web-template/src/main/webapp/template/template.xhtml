@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<h:outputStylesheet name="bootstrap.css" library="css" />
+	<h:outputStylesheet name="style.css" library="css" />
+	<h:outputStylesheet name="font-awesome.min.css" library="css" />
+</h:head>
+
+<ui:insert>
+	<ui:include src="header.xhtml"></ui:include>
+</ui:insert>
+
+<ui:insert>
+	<ui:include src="content.xhtml"></ui:include>
+</ui:insert>
+
+<ui:insert>
+	<ui:include src="footer.xhtml"></ui:include>
+</ui:insert>
+
+<!-- JavaScript Libraries -->
+<h:outputScript name="jquery.js" library="jquery" />
+<h:outputScript name="bootstrap.min.js" library="js" />
+f
+<h:outputScript name="validate.js" library="php-mail-form" />
+<h:outputScript name="prettyphoto.js" library="js" />
+<h:outputScript name="isotope.min.js" library="isotope" />
+<h:outputScript name="hoverdir.js" library="hover" />
+<h:outputScript name="hoverex.min.js" library="hover" />
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+</html>
