@@ -9,6 +9,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
+	<title>Welcome to JSF Tutorials</title>
 	<h:outputStylesheet name="lib/bootstrap/css/bootstrap.min.css" />
 	<h:outputStylesheet name="lib/font-awesome/css/font-awesome.min.css" />
 	<h:outputStylesheet name="lib/prettyphoto/css/prettyphoto.css" />
@@ -16,15 +17,21 @@
 	<h:outputStylesheet name="css/style.css" />
 </h:head>
 
-<ui:insert>
+<ui:insert name="header">
 	<ui:include src="StartHeader.xhtml"></ui:include>
 </ui:insert>
-
-<ui:insert>
-	<ui:include src="content.xhtml"></ui:include>
-</ui:insert>
-
-<ui:insert>
+<div id="headerwrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<ui:insert name="content">
+					<ui:include src="content.xhtml"></ui:include>
+				</ui:insert>
+			</div>
+		</div>
+	</div>
+</div>
+<ui:insert name="footer">
 	<ui:include src="EndFooter.xhtml"></ui:include>
 </ui:insert>
 

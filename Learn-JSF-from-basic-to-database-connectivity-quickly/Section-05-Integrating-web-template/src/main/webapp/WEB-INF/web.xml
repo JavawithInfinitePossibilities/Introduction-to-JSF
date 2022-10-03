@@ -6,7 +6,7 @@
 	id="WebApp_ID" version="3.1">
 	<display-name>Section-05-Integrating-web-template</display-name>
 	<welcome-file-list>
-		<welcome-file>Index.xhtml</welcome-file>
+		<welcome-file>Welcome.xhtml</welcome-file>
 	</welcome-file-list>
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
