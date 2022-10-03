@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Reference :  https://stackoverflow.com/questions/8320486/structure-for-multiple-jsf-projects-with-shared-code -->
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -7,13 +8,15 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-	<h:outputStylesheet name="bootstrap.css" library="css" />
-	<h:outputStylesheet name="style.css" library="css" />
-	<h:outputStylesheet name="font-awesome.min.css" library="css" />
+	<h:outputStylesheet name="lib/bootstrap/css/bootstrap.min.css" />
+	<h:outputStylesheet name="lib/font-awesome/css/font-awesome.min.css" />
+	<h:outputStylesheet name="lib/prettyphoto/css/prettyphoto.css" />
+	<h:outputStylesheet name="lib/hover/hoverex-all.css" />
+	<h:outputStylesheet name="css/style.css" />
 </h:head>
 
 <ui:insert>
-	<ui:include src="header.xhtml"></ui:include>
+	<ui:include src="StartHeader.xhtml"></ui:include>
 </ui:insert>
 
 <ui:insert>
@@ -21,19 +24,18 @@
 </ui:insert>
 
 <ui:insert>
-	<ui:include src="footer.xhtml"></ui:include>
+	<ui:include src="EndFooter.xhtml"></ui:include>
 </ui:insert>
 
 <!-- JavaScript Libraries -->
-<h:outputScript name="jquery.js" library="jquery" />
-<h:outputScript name="bootstrap.min.js" library="js" />
-f
-<h:outputScript name="validate.js" library="php-mail-form" />
-<h:outputScript name="prettyphoto.js" library="js" />
-<h:outputScript name="isotope.min.js" library="isotope" />
-<h:outputScript name="hoverdir.js" library="hover" />
-<h:outputScript name="hoverex.min.js" library="hover" />
+<h:outputScript name="lib/jquery/jquery.min.js" />
+<h:outputScript name="lib/bootstrap/js/bootstrap.min.js" />
+<h:outputScript name="lib/php-mail-form/validate.js" />
+<h:outputScript name="lib/prettyphoto/js/prettyphoto.js" />
+<h:outputScript name="lib/isotope/isotope.min.js" />
+<h:outputScript name="lib/hover/hoverdir.js" />
+<h:outputScript name="lib/hover/hoverex.min.js" />
 
 <!-- Template Main Javascript File -->
-<script src="js/main.js"></script>
+<script src="../resources/js/main.js"></script>
 </html>
