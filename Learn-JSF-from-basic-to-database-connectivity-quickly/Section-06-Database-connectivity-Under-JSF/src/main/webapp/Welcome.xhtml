@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--http://localhost:8080/Section-06-Database-connectivity-Under-JSF/  -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template/template.xhtml">
+	<ui:define name="title">
+		<title>User details</title>
+	</ui:define>
+	<ui:define name="content">
+		<div align="center">
+			<h1>Welcome to JSF tutorial</h1>
+			<!-- #{request.contextPath} -->
+			<h:dataTable value="#{userDetailsController.userDetailsList}"
+				var="userDetailList" border="1">
+				<h:column>
+					<f:facet name="header">User Id</f:facet>
+					#{userDetailList.userId}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Name</f:facet>
+					#{userDetailList.userName}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Last Name</f:facet>
+					#{userDetailList.userLastName}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Age</f:facet>
+					#{userDetailList.userAge}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Email</f:facet>
+					#{userDetailList.userEmail}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Address</f:facet>
+					#{userDetailList.userAddress}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Contact</f:facet>
+					#{userDetailList.userContact}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User Alt Contact Details</f:facet>
+					#{userDetailList.userAltContactDetails}
+				</h:column>
+				<h:column>
+					<f:facet name="header">User AADHER Details</f:facet>
+					#{userDetailList.userAADHERDetails}
+				</h:column>
+			</h:dataTable>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
