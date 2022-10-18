@@ -42,15 +42,17 @@ public class ValidationExceptionDetails implements Serializable {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
 			LocalDate localDate = LocalDate.parse(releaseDate, formatter);
 			if (!localDate.isAfter(date)) {
-				((UIInput) component).setValid(true);
 				FacesMessage message = new FacesMessage("Future date is required!!!");
-				context.addMessage(component.getClientId(context), message);
+				/*
+				 * ((UIInput) component).setValid(true);
+				 * context.addMessage(component.getClientId(context), message);
+				 */
 				/**
 				 * we can throw exception in 2 way <br/>
 				 * first procedure is the above step by using UI component. <br/>
 				 * second is by throwing exception. Below procedure.
 				 */
-				// throw new ValidatorException(message);
+				 throw new ValidatorException(message);
 			}
 		}
 	}
