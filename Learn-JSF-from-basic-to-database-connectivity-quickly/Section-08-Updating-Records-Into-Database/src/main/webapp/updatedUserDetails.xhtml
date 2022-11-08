@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<f:metadata>
+	<f:event
+		listener="#{updateUserDetailsController.init(param['user_ID'])}"
+		type="preRenderView" />
+</f:metadata>
+
+<ui:composition template="template/template.xhtml">
+	<ui:define name="title">
+		<title>Update User details</title>
+	</ui:define>
+	<ui:define name="content">
+		<div align="center">
+			<h:form>
+				<div class="form-group">
+					<label for="userName">User ID:</label>
+					<h:inputText class="form-control" pt:placeholder="User ID"
+						value="#{updateUserDetailsController.userDetail.userId}"
+						id="userId" required="true" readonly="true" />
+				</div>
+				<div class="form-group">
+					<label for="userName">User Name:</label>
+					<h:inputText class="form-control" pt:placeholder="User Name"
+						value="#{updateUserDetailsController.userDetail.userName}"
+						id="username" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="lastnameLabel">Last Name:</label>
+					<h:inputText class="form-control" pt:placeholder="Last Name"
+						value="#{updateUserDetailsController.userDetail.userLastName}"
+						id="lastname" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="ageLabel">Age:</label>
+					<h:inputText class="form-control" pt:placeholder="Age"
+						value="#{updateUserDetailsController.userDetail.userAge}" id="age"
+						required="true" />
+				</div>
+				<div class="form-group">
+					<label for="emailLabel">Email:</label>
+					<h:inputText class="form-control" pt:placeholder="Email"
+						value="#{updateUserDetailsController.userDetail.userEmail}"
+						id="email" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="addressLabel">Address:</label>
+					<h:inputText class="form-control" pt:placeholder="Address"
+						value="#{updateUserDetailsController.userDetail.userAddress}"
+						id="address" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="contactLabel">Contact:</label>
+					<h:inputText class="form-control" pt:placeholder="Contact"
+						value="#{updateUserDetailsController.userDetail.userContact}"
+						id="contact" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="altcontactLabel">Alternative Contact Details:</label>
+					<h:inputText class="form-control"
+						pt:placeholder="Alternative Contact Details"
+						value="#{updateUserDetailsController.userDetail.userAltContactDetails}"
+						id="altcontact" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="aadherLabel">AADHER Details:</label>
+					<h:inputText class="form-control" pt:placeholder="AADHER Details"
+						value="#{updateUserDetailsController.userDetail.userAADHERDetails}"
+						id="aadher" required="true" />
+				</div>
+				<div class="form-group">
+					<label for="pwdLabel">Password:</label>
+					<h:inputText class="form-control" pt:placeholder="Password"
+						value="#{updateUserDetailsController.userDetail.userPassword}"
+						id="pwd" required="true" />
+				</div>
+				<div class="form-group">
+					<h:commandButton class="btn btn-theme"
+						action="#{updateUserDetailsController.updateUser()}"
+						value="Add User Details" />
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

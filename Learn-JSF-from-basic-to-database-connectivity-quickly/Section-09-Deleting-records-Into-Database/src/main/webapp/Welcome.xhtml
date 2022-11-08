@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--http://localhost:8080/Section-09-Deleting-records-Into-Database/  -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template/template.xhtml">
+	<ui:define name="title">
+		<title>User details</title>
+	</ui:define>
+	<ui:define name="content">
+		<div align="center">
+			<h1>Welcome to JSF tutorial</h1>
+			<h:form>
+				<!-- #{request.contextPath} -->
+				<h:dataTable value="#{userDetailsController.userDetailsList}"
+					var="userDetailList">
+					<h:column>
+						<f:facet name="header">
+							<label for="userId">User Id</label>
+						</f:facet>
+						<h:inputText class="form-control" value="#{userDetailList.userId}"
+							id="userId" readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="username">User Name</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userName}" id="username" readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userLastName">User Last Name</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userLastName}" id="userLastName"
+							readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userAge">User Age</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userAge}" id="userAge" readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userEmail">User Email</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userEmail}" id="userEmail"
+							readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userAddress">User Address</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userAddress}" id="userAddress"
+							readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userContact">User Contact</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userContact}" id="userContact"
+							readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userAltContactDetails">User Alternate Contact
+								Details</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userAltContactDetails}"
+							id="userAltContactDetails" readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="userAADHERDetails">User AADHER Details</label>
+						</f:facet>
+						<h:inputText class="form-control"
+							value="#{userDetailList.userAADHERDetails}"
+							id="userAADHERDetails" readonly="true" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<label for="update">Action</label>
+						</f:facet>
+						<a
+							href="updatedUserDetails.xhtml?user_ID=#{userDetailList.userId}"
+							class="btn btn-link">Update</a>|
+					<h:commandLink value="Delete"
+							action="#{userDetailsController.deleteUserDetails(userDetailList.userId)}"
+							onclick="if(!confirm('Are you sure to delete the record?')) return false" />
+					</h:column>
+				</h:dataTable>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--http://localhost:8080/Section-05-Integrating-web-template/template/template.xhtml  -->
+<!--Reference :  https://stackoverflow.com/questions/8320486/structure-for-multiple-jsf-projects-with-shared-code -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<ui:insert name="title">
+		<title>Welcome to JSF Tutorials</title>
+	</ui:insert>
+	<h:outputStylesheet name="lib/bootstrap/css/bootstrap.min.css" />
+	<h:outputStylesheet name="lib/font-awesome/css/font-awesome.min.css" />
+	<h:outputStylesheet name="lib/prettyphoto/css/prettyphoto.css" />
+	<h:outputStylesheet name="lib/hover/hoverex-all.css" />
+	<h:outputStylesheet name="css/style.css" />
+</h:head>
+
+<ui:insert name="header">
+	<ui:include src="StartHeader.xhtml"></ui:include>
+</ui:insert>
+<div id="headerwrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<ui:insert name="content">
+					<ui:include src="content.xhtml"></ui:include>
+				</ui:insert>
+			</div>
+		</div>
+	</div>
+</div>
+<ui:insert name="footer">
+	<ui:include src="EndFooter.xhtml"></ui:include>
+</ui:insert>
+
+<!-- JavaScript Libraries -->
+<h:outputScript name="lib/jquery/jquery.min.js" />
+<h:outputScript name="lib/bootstrap/js/bootstrap.min.js" />
+<h:outputScript name="lib/php-mail-form/validate.js" />
+<h:outputScript name="lib/prettyphoto/js/prettyphoto.js" />
+<h:outputScript name="lib/isotope/isotope.min.js" />
+<h:outputScript name="lib/hover/hoverdir.js" />
+<h:outputScript name="lib/hover/hoverex.min.js" />
+
+<!-- Template Main Javascript File -->
+<script src="../resources/js/main.js"></script>
+</html>
